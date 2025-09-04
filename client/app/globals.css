@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+html { scroll-behavior: smooth; }
+
+@font-face {
+  font-family: 'HighCrush';
+  src: url(/fonts/HighCrush.otf);
+  font-weight: normal;
+  font-style: normal;
+}
+
+.text-stroke {
+  -webkit-text-stroke: 0.5px #fff700;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
