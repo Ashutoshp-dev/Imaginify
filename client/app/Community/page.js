@@ -96,16 +96,14 @@ const CommunityPage = () => {
                         className="group relative mb-5 break-inside-avoid rounded-2xl overflow-hidden shadow-lg hover:scale-[1.02] transition-transform duration-300"
                     >
 
-                        <Image
+                        <img
                             src={post.photo}
                             alt={post.prompt}
-                            className="w-full object-cover rounded-2xl"
+                            className="w-full object-cover rounded-2xl cursor-pointer"
                             onClick={() => {
                                 setSelectedPost(post);
                                 setDetailsModal(true);
                             }}
-                            width={500}
-                            height={400}
                         />
                         <div className='absolute bottom-0 left-0 right-0 bg-black/60 w-full p-2 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none group-hover:pointer-events-auto'>
                             <h2>
