@@ -153,16 +153,16 @@ const CommunityPage = () => {
                         <div className="relative flex flex-col md:flex-row items-center gap-5">
                             {loading && (
                                 <>
-                                    <Image src={selectedPost.photo} alt="SelectedImage" className="w-full md:w-[50%] rounded-lg mb-4" width={500} height={400} />
+                                    <img src={selectedPost.photo} alt="SelectedImage" className="w-full md:w-[50%] rounded-lg mb-4" />
                                     <svg fill="hsl(228, 97%, 42%)" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className='absolute top-[50%] left-[25%] w-10 h-10 translate-x-[-50%] translate-y-[-50%]' ><rect x="1" y="6" width="2.8" height="12"><animate id="spinner_CcmT" begin="0;spinner_IzZB.end-0.1s" attributeName="y" calcMode="spline" dur="0.6s" values="6;1;6" keySplines=".36,.61,.3,.98;.36,.61,.3,.98" /><animate begin="0;spinner_IzZB.end-0.1s" attributeName="height" calcMode="spline" dur="0.6s" values="12;22;12" keySplines=".36,.61,.3,.98;.36,.61,.3,.98" /></rect><rect x="5.8" y="6" width="2.8" height="12"><animate begin="spinner_CcmT.begin+0.1s" attributeName="y" calcMode="spline" dur="0.6s" values="6;1;6" keySplines=".36,.61,.3,.98;.36,.61,.3,.98" /><animate begin="spinner_CcmT.begin+0.1s" attributeName="height" calcMode="spline" dur="0.6s" values="12;22;12" keySplines=".36,.61,.3,.98;.36,.61,.3,.98" /></rect><rect x="10.6" y="6" width="2.8" height="12"><animate begin="spinner_CcmT.begin+0.2s" attributeName="y" calcMode="spline" dur="0.6s" values="6;1;6" keySplines=".36,.61,.3,.98;.36,.61,.3,.98" /><animate begin="spinner_CcmT.begin+0.2s" attributeName="height" calcMode="spline" dur="0.6s" values="12;22;12" keySplines=".36,.61,.3,.98;.36,.61,.3,.98" /></rect><rect x="15.4" y="6" width="2.8" height="12"><animate begin="spinner_CcmT.begin+0.3s" attributeName="y" calcMode="spline" dur="0.6s" values="6;1;6" keySplines=".36,.61,.3,.98;.36,.61,.3,.98" /><animate begin="spinner_CcmT.begin+0.3s" attributeName="height" calcMode="spline" dur="0.6s" values="12;22;12" keySplines=".36,.61,.3,.98;.36,.61,.3,.98" /></rect><rect x="20.2" y="6" width="2.8" height="12"><animate id="spinner_IzZB" begin="spinner_CcmT.begin+0.4s" attributeName="y" calcMode="spline" dur="0.6s" values="6;1;6" keySplines=".36,.61,.3,.98;.36,.61,.3,.98" /><animate begin="spinner_CcmT.begin+0.4s" attributeName="height" calcMode="spline" dur="0.6s" values="12;22;12" keySplines=".36,.61,.3,.98;.36,.61,.3,.98" /></rect></svg>
                                 </>
                             )}
                             {!loading && noBgImage && (
-                                <Image src={noBgImage} alt="No Background Image" className="relative w-full md:w-[50%] rounded-lg mb-4" width={500} height={400} />
+                                <img src={noBgImage} alt="No Background Image" className="relative w-full md:w-[50%] rounded-lg mb-4"/>
                             )}
                             {!loading && !noBgImage && (
                                 <>
-                                    <Image src={selectedPost.photo} alt="SelectedImage" className="w-[45%] md:w-[50%] rounded-lg mb-4" width={500} height={400} />
+                                    <img src={selectedPost.photo} alt="SelectedImage" className="w-[45%] md:w-[50%] rounded-lg mb-4" />
                                     <button onClick={() => handleRemoveBg(selectedPost.photo)} className='absolute hidden md:block md:bottom-4 md:left-[25%] transform -translate-x-1/2 bg-gradient-to-r from-red-400 to-red-600 hover:from-red-500 hover:to-red-700 text-white py-2 px-5 rounded-lg font-medium shadow-md transition hover:scale-105 cursor-pointer'>Remove Background</button>
                                 </>
                             )}
