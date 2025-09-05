@@ -150,7 +150,8 @@ const CommunityPage = () => {
                     <div className="bg-white/20 backdrop-blur-md rounded-lg p-6 max-w-3xl w-full relative"
                         onClick={(e) => e.stopPropagation()}>
                         <h2 className="text-2xl font-semibold mb-4">Post Details</h2>
-                        <div className="relative flex flex-col md:flex-row items-center gap-5">
+                        <div className='overflow-y-auto flex flex-col gap-5'>
+                            <div className="relative flex flex-col md:flex-row items-center gap-5">
                             {loading && (
                                 <>
                                     <img src={selectedPost.photo} alt="SelectedImage" className="w-full md:w-[50%] rounded-lg mb-4" />
@@ -162,7 +163,7 @@ const CommunityPage = () => {
                             )}
                             {!loading && !noBgImage && (
                                 <>
-                                    <img src={selectedPost.photo} alt="SelectedImage" className="w-[45%] md:w-[50%] rounded-lg mb-4" />
+                                    <img src={selectedPost.photo} alt="SelectedImage" className="w-full md:w-[50%] rounded-lg mb-4" />
                                     <button onClick={() => handleRemoveBg(selectedPost.photo)} className='absolute hidden md:block md:bottom-4 md:left-[25%] transform -translate-x-1/2 bg-gradient-to-r from-red-400 to-red-600 hover:from-red-500 hover:to-red-700 text-white py-2 px-5 rounded-lg font-medium shadow-md transition hover:scale-105 cursor-pointer'>Remove Background</button>
                                 </>
                             )}
@@ -183,6 +184,7 @@ const CommunityPage = () => {
                                     <button onClick={() => handleDownload(selectedPost.photo)} className='bg-gradient-to-r from-green-400 to-green-600 hover:from-green-500 hover:to-green-700 text-white py-2 px-5 rounded-lg font-medium shadow-md transition transform hover:scale-105 cursor-pointer'>Download</button>
                                 </div>
                             )}
+                        </div>
                         </div>
                         <button
                             onClick={() => setDetailsModal(false)}
