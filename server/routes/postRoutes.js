@@ -32,11 +32,20 @@ router.route('/').post(async(req,res)=>{
 
 router.route('/').get(async(req,res)=>{
     try{
+        console.log('Attempting to fetch posts...');
+        console.log('Post model:', Post);
         const posts=await Post.find({});
+        console.log('Posts found:', posts.length);
         res.status(200).json({success:true,data:posts});
     }catch(error){
         console.error('Error fetching posts:', error);
-        res.status(500).json({ error: 'Failed to fetch posts' });
+        console.error('Error details:', error.message);
+        console.error('Error stack:', error.stack);
+        res.status(500).json({ 
+            success: false,
+            error: 'Failed to fetch posts',
+            details: error.message 
+        });
     }
 })
 

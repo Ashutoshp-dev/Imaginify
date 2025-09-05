@@ -29,7 +29,7 @@ const Navbar = () => {
     <nav className='fixed top-10 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-6xl rounded-full flex px-6 py-3 justify-between items-center border border-white/20 backdrop-blur-2xl bg-white/30 shadow-lg'>
       <div className='font-bold text-xl'>
         <Link href="/">
-          <Image src="/logo.png" className='absolute w-40 -bottom-12 md:-bottom-14 left-5 ' alt="Imaginify Logo" width={160} height={64} />
+          <Image src="/logo.png" className='absolute w-40 -bottom-16 md:-bottom-18 left-5 ' alt="Imaginify Logo" width={160} height={64} style={{ width: 'auto', height: 'auto' }} />
         </Link>
       </div>
       

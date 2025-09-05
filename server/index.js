@@ -10,7 +10,7 @@ dotenv.config()
 
 const app = express()
 app.use(cors({
-    origin: ['http://localhost:3000', 'https://imaginify-ai.vercel.app']
+    origin: "*",
 }))
 app.use(express.json({ limit: "50mb" }))
 
@@ -20,14 +20,23 @@ app.use('/api/remove-bg', removeBg);
 
 mongoose.connect(process.env.MONGODB_URI)
 .then(() => {
-    console.log('Connected to MongoDB')
+    console.log('Connected to MongoDB successfully')
 })
 .catch((error) => {
     console.error('MongoDB connection error:', error)
+    console.error('MongoDB URI:', process.env.MONGODB_URI ? 'Set' : 'Not set')
 })
 
 app.get('/', (req, res) => {
     res.send('Hello World!')
+})
+
+app.get('/health', (req, res) => {
+    res.json({
+        status: 'OK',
+        timestamp: new Date().toISOString(),
+        mongodb: mongoose.connection.readyState === 1 ? 'Connected' : 'Disconnected'
+    })
 })
 
 const port = process.env.PORT || 8080

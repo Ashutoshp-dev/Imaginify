@@ -13,16 +13,25 @@ const CommunityPage = () => {
 
     useEffect(() => {
         const fetchPosts = async () => {
-            const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:8080"
-            const response = await fetch(`${baseUrl}/api/posts`, {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-            })
-            if (response.ok) {
-                const result = await response.json();
-                setAllPosts(result.data.reverse());
+            try {
+                const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:8080"
+                console.log('Fetching posts from:', `${baseUrl}/api/posts`)
+                const response = await fetch(`${baseUrl}/api/posts`, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                })
+                console.log('Response status:', response.status)
+                if (response.ok) {
+                    const result = await response.json();
+                    console.log('Posts fetched:', result.data?.length || 0)
+                    setAllPosts(result.data?.reverse() || []);
+                } else {
+                    console.error('Failed to fetch posts:', response.status, response.statusText)
+                }
+            } catch (error) {
+                console.error('Error fetching posts:', error)
             }
         }
         fetchPosts();
