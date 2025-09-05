@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useEffect } from "react";
 import { gsap } from "gsap";
+import Image from "next/image";
 
 export default function Hero() {
   useEffect(() => {
@@ -63,18 +64,24 @@ export default function Hero() {
               {/* Top Row */}
               <div className="space-y-4">
                 <div className="relative group overflow-hidden rounded-2xl shadow-2xl hover:shadow-purple-500/25 transition-all duration-300">
-                  <img
-                    src="https://readdy.ai/api/search-image?query=stunning%20digital%20art%20portrait%20of%20a%20mystical%20woman%20with%20flowing%20hair%20and%20ethereal%20lighting%20against%20a%20cosmic%20background%20with%20stars%20and%20nebula%20colors&width=300&height=400&seq=hero1&orientation=portrait"
+                  <Image
+                    src="/heroImg1.jpg"
                     alt="AI Generated Art"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    width={300}
+                    height={400}
+                    unoptimized
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-purple-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
                 <div className="relative group overflow-hidden rounded-2xl shadow-2xl hover:shadow-pink-500/25 transition-all duration-300">
-                  <img
-                    src="https://readdy.ai/api/search-image?query=beautiful%20abstract%20landscape%20with%20mountains%20and%20aurora%20borealis%20in%20vibrant%20purple%20and%20cyan%20colors%20with%20dreamy%20atmosphere%20and%20soft%20lighting&width=300&height=300&seq=hero2&orientation=squarish"
+                  <Image
+                    src="/heroImg2.jpg"
                     alt="AI Generated Landscape"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    width={300}
+                    height={300}
+                    unoptimized
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-pink-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
@@ -83,18 +90,24 @@ export default function Hero() {
               {/* Bottom Row */}
               <div className="space-y-4 mt-8">
                 <div className="relative group overflow-hidden rounded-2xl shadow-2xl hover:shadow-cyan-500/25 transition-all duration-300">
-                  <img
-                    src="https://readdy.ai/api/search-image?query=futuristic%20cityscape%20at%20night%20with%20neon%20lights%20and%20flying%20vehicles%20in%20cyberpunk%20style%20with%20purple%20and%20blue%20color%20scheme%20and%20atmospheric%20perspective&width=300&height=300&seq=hero3&orientation=squarish"
+                  <Image
+                    src="/heroImg3.jpg"
                     alt="AI Generated Cityscape"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    width={300}
+                    height={300}
+                    unoptimized
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-cyan-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
                 <div className="relative group overflow-hidden rounded-2xl shadow-2xl hover:shadow-indigo-500/25 transition-all duration-300">
-                  <img
-                    src="https://readdy.ai/api/search-image?query=magical%20fantasy%20creature%20dragon%20with%20iridescent%20scales%20flying%20through%20clouds%20with%20rainbow%20colors%20and%20ethereal%20lighting%20in%20a%20dreamlike%20atmosphere&width=300&height=400&seq=hero4&orientation=portrait"
+                  <Image
+                    src="/heroImg4.jpg"
                     alt="AI Generated Fantasy"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    width={300}
+                    height={400}
+                    unoptimized
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-indigo-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>

@@ -2,6 +2,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,13 +11,14 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   }
 
-  const handleClickOutside = (e) => {
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
     if (isMenuOpen && !e.target.closest('.menu-container') && !e.target.closest('.menu-toggle')) {
       setIsMenuOpen(false);
     }
   }
 
-  useEffect(() => {
     if (isMenuOpen) {
       document.addEventListener('click', handleClickOutside);
       return () => document.removeEventListener('click', handleClickOutside);
@@ -27,7 +29,7 @@ const Navbar = () => {
     <nav className='fixed top-10 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-6xl rounded-full flex px-6 py-3 justify-between items-center border border-white/20 backdrop-blur-2xl bg-white/30 shadow-lg'>
       <div className='font-bold text-xl'>
         <Link href="/">
-          <img src="/logo.png" className='absolute w-40 -bottom-12 md:-bottom-14 left-5 ' alt="Imaginify Logo" />
+          <Image src="/logo.png" className='absolute w-40 -bottom-12 md:-bottom-14 left-5 ' alt="Imaginify Logo" width={160} height={64} />
         </Link>
       </div>
       

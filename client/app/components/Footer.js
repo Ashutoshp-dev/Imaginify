@@ -2,6 +2,8 @@
 import React, { useEffect, useRef } from "react";
 import Link from "next/link";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 const Footer = () => {
   const footerRef = useRef(null);
@@ -15,7 +17,7 @@ const Footer = () => {
         duration: 1.5,
         ease: "power3.out",
         scrollTrigger: {
-          trigger: ".footer",
+          trigger: "footerRef.current",
           start: "top 70%",
           toggleActions: "play none none none",
         },
@@ -29,7 +31,7 @@ const Footer = () => {
         ease: "power3.out",
         delay: 0.3,
         scrollTrigger: {
-          trigger: ".footer",
+          trigger: "footerRef.current",
           start: "top 70%",
           toggleActions: "play none none none",
         },
@@ -43,7 +45,7 @@ const Footer = () => {
         ease: "power3.out",
         delay: 0.6,
         scrollTrigger: {
-          trigger: ".footer",
+          trigger: "footerRef.current",
           start: "top 70%",
           toggleActions: "play none none none",
         },

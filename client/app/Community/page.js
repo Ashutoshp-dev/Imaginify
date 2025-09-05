@@ -1,8 +1,9 @@
 "use client"
 import React, { useEffect, useState } from 'react'
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+import Image from 'next/image';
 
-const page = () => {
+const CommunityPage = () => {
     const [allPosts, setAllPosts] = useState([]);
     const [detailsModal, setDetailsModal] = useState(false)
     const [selectedPost, setSelectedPost] = useState(null);
@@ -86,7 +87,7 @@ const page = () => {
                         className="group relative mb-5 break-inside-avoid rounded-2xl overflow-hidden shadow-lg hover:scale-[1.02] transition-transform duration-300"
                     >
 
-                        <img
+                        <Image
                             src={post.photo}
                             alt={post.prompt}
                             className="w-full object-cover rounded-2xl"
@@ -94,6 +95,8 @@ const page = () => {
                                 setSelectedPost(post);
                                 setDetailsModal(true);
                             }}
+                            width={500}
+                            height={400}
                         />
                         <div className='absolute bottom-0 left-0 right-0 bg-black/60 w-full p-2 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none group-hover:pointer-events-auto'>
                             <h2>
@@ -119,19 +122,19 @@ const page = () => {
             </div>
 
             <div className='columns-2 md:columns-3 lg:columns-4 gap-4'>
-                <img src={'/ai1.jpg'} alt="" className="w-full object-cover rounded-2xl mb-5" />
-                <img src={'/ai2.jpg'} alt="" className="w-full object-cover rounded-2xl mb-5" />
-                <img src={'/ai3.png'} alt="" className="w-full object-cover rounded-2xl mb-5" />
-                <img src={'/ai4.jpg'} alt="" className="w-full object-cover rounded-2xl mb-5" />
+                <Image src={'/ai1.jpg'} alt="static-image" className="w-full object-cover rounded-2xl mb-5" width={500} height={400} />
+                <Image src={'/ai2.jpg'} alt="static-image" className="w-full object-cover rounded-2xl mb-5" width={500} height={400} />
+                <Image src={'/ai3.png'} alt="static-image" className="w-full object-cover rounded-2xl mb-5" width={500} height={400} />
+                <Image src={'/ai4.jpg'} alt="static-image" className="w-full object-cover rounded-2xl mb-5" width={500} height={400} />
 
-                <img src={'/ai12.png'} alt="" className="w-full object-cover rounded-2xl mb-5" />
-                <img src={'/ai5.png'} alt="" className="w-full object-cover rounded-2xl mb-5" />
-                <img src={'/ai6.png'} alt="" className="w-full object-cover rounded-2xl mb-5" />
-                <img src={'/ai7.jpg'} alt="" className="w-full object-cover rounded-2xl mb-5" />
-                <img src={'/ai8.jpg'} alt="" className="w-full object-cover rounded-2xl mb-5" />
-                <img src={'/ai9.jpg'} alt="" className="w-full object-cover rounded-2xl mb-5" />
-                <img src={'/ai10.jpg'} alt="" className="w-full object-cover rounded-2xl mb-5" />
-                <img src={'/ai11.jpg'} alt="" className="w-full object-cover rounded-2xl mb-5" />
+                <Image src={'/ai12.png'} alt="static-image" className="w-full object-cover rounded-2xl mb-5" width={500} height={400} />
+                <Image src={'/ai5.png'} alt="static-image" className="w-full object-cover rounded-2xl mb-5" width={500} height={400} />
+                <Image src={'/ai6.png'} alt="static-image" className="w-full object-cover rounded-2xl mb-5" width={500} height={400} />
+                <Image src={'/ai7.jpg'} alt="static-image" className="w-full object-cover rounded-2xl mb-5" width={500} height={400} />
+                <Image src={'/ai8.jpg'} alt="static-image" className="w-full object-cover rounded-2xl mb-5" width={500} height={400} />
+                <Image src={'/ai9.jpg'} alt="static-image" className="w-full object-cover rounded-2xl mb-5" width={500} height={400} />
+                <Image src={'/ai10.jpg'} alt="static-image" className="w-full object-cover rounded-2xl mb-5" width={500} height={400} />
+                <Image src={'/ai11.jpg'} alt="static-image" className="w-full object-cover rounded-2xl mb-5" width={500} height={400} />
             </div>
 
             {detailsModal && selectedPost && (
@@ -143,16 +146,16 @@ const page = () => {
                         <div className="relative flex flex-col md:flex-row items-center gap-5">
                             {loading && (
                                 <>
-                                    <img src={selectedPost.photo} alt="Selected" className="w-full md:w-[50%] rounded-lg mb-4" />
+                                    <Image src={selectedPost.photo} alt="SelectedImage" className="w-full md:w-[50%] rounded-lg mb-4" width={500} height={400} />
                                     <svg fill="hsl(228, 97%, 42%)" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className='absolute top-[50%] left-[25%] w-10 h-10 translate-x-[-50%] translate-y-[-50%]' ><rect x="1" y="6" width="2.8" height="12"><animate id="spinner_CcmT" begin="0;spinner_IzZB.end-0.1s" attributeName="y" calcMode="spline" dur="0.6s" values="6;1;6" keySplines=".36,.61,.3,.98;.36,.61,.3,.98" /><animate begin="0;spinner_IzZB.end-0.1s" attributeName="height" calcMode="spline" dur="0.6s" values="12;22;12" keySplines=".36,.61,.3,.98;.36,.61,.3,.98" /></rect><rect x="5.8" y="6" width="2.8" height="12"><animate begin="spinner_CcmT.begin+0.1s" attributeName="y" calcMode="spline" dur="0.6s" values="6;1;6" keySplines=".36,.61,.3,.98;.36,.61,.3,.98" /><animate begin="spinner_CcmT.begin+0.1s" attributeName="height" calcMode="spline" dur="0.6s" values="12;22;12" keySplines=".36,.61,.3,.98;.36,.61,.3,.98" /></rect><rect x="10.6" y="6" width="2.8" height="12"><animate begin="spinner_CcmT.begin+0.2s" attributeName="y" calcMode="spline" dur="0.6s" values="6;1;6" keySplines=".36,.61,.3,.98;.36,.61,.3,.98" /><animate begin="spinner_CcmT.begin+0.2s" attributeName="height" calcMode="spline" dur="0.6s" values="12;22;12" keySplines=".36,.61,.3,.98;.36,.61,.3,.98" /></rect><rect x="15.4" y="6" width="2.8" height="12"><animate begin="spinner_CcmT.begin+0.3s" attributeName="y" calcMode="spline" dur="0.6s" values="6;1;6" keySplines=".36,.61,.3,.98;.36,.61,.3,.98" /><animate begin="spinner_CcmT.begin+0.3s" attributeName="height" calcMode="spline" dur="0.6s" values="12;22;12" keySplines=".36,.61,.3,.98;.36,.61,.3,.98" /></rect><rect x="20.2" y="6" width="2.8" height="12"><animate id="spinner_IzZB" begin="spinner_CcmT.begin+0.4s" attributeName="y" calcMode="spline" dur="0.6s" values="6;1;6" keySplines=".36,.61,.3,.98;.36,.61,.3,.98" /><animate begin="spinner_CcmT.begin+0.4s" attributeName="height" calcMode="spline" dur="0.6s" values="12;22;12" keySplines=".36,.61,.3,.98;.36,.61,.3,.98" /></rect></svg>
                                 </>
                             )}
                             {!loading && noBgImage && (
-                                <img src={noBgImage} alt="No Background" className="relative w-full md:w-[50%] rounded-lg mb-4" />
+                                <Image src={noBgImage} alt="No Background Image" className="relative w-full md:w-[50%] rounded-lg mb-4" width={500} height={400} />
                             )}
                             {!loading && !noBgImage && (
                                 <>
-                                    <img src={selectedPost.photo} alt="Selected" className="w-[45%] md:w-[50%] rounded-lg mb-4" />
+                                    <Image src={selectedPost.photo} alt="SelectedImage" className="w-[45%] md:w-[50%] rounded-lg mb-4" width={500} height={400} />
                                     <button onClick={() => handleRemoveBg(selectedPost.photo)} className='absolute hidden md:block md:bottom-4 md:left-[25%] transform -translate-x-1/2 bg-gradient-to-r from-red-400 to-red-600 hover:from-red-500 hover:to-red-700 text-white py-2 px-5 rounded-lg font-medium shadow-md transition hover:scale-105 cursor-pointer'>Remove Background</button>
                                 </>
                             )}
@@ -200,4 +203,4 @@ const page = () => {
     )
 }
 
-export default page
+export default CommunityPage

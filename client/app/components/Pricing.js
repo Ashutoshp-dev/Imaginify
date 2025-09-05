@@ -2,6 +2,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -155,7 +156,7 @@ const Pricing = () => {
           onClick={() => setQrImage(null)}
           className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 cursor-pointer"
         >
-          <img src={qrImage} alt="Scan QR" className="w-64 h-64" />
+          <Image src={qrImage} alt="Scan QR" width={256} height={256} className="w-64 h-64" />
         </div>
       )}
     </section>
