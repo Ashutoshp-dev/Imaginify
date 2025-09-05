@@ -147,10 +147,10 @@ const CommunityPage = () => {
             {detailsModal && selectedPost && (
                 <div className="fixed inset-0 bg-black/30 bg-opacity-75 flex items-center justify-center z-50"
                     onClick={() => setDetailsModal(false)}>
-                    <div className="bg-white/20 backdrop-blur-md rounded-lg p-6 max-w-3xl w-full relative"
+                    <div className="bg-white/20 backdrop-blur-md rounded-lg p-6 max-w-3xl my-20 max-h-md w-[80%] sm:w-full relative"
                         onClick={(e) => e.stopPropagation()}>
                         <h2 className="text-2xl font-semibold mb-4">Post Details</h2>
-                        <div className='overflow-y-auto flex flex-col gap-5'>
+                        <div className='overflow-y-auto flex flex-col max-h-md '>
                             <div className="relative flex flex-col md:flex-row items-center gap-5">
                             {loading && (
                                 <>
@@ -163,7 +163,7 @@ const CommunityPage = () => {
                             )}
                             {!loading && !noBgImage && (
                                 <>
-                                    <img src={selectedPost.photo} alt="SelectedImage" className="w-full md:w-[50%] rounded-lg mb-4" />
+                                    <img src={selectedPost.photo} alt="SelectedImage" className="w-[80%] sm:w-[50%] rounded-lg" />
                                     <button onClick={() => handleRemoveBg(selectedPost.photo)} className='absolute hidden md:block md:bottom-4 md:left-[25%] transform -translate-x-1/2 bg-gradient-to-r from-red-400 to-red-600 hover:from-red-500 hover:to-red-700 text-white py-2 px-5 rounded-lg font-medium shadow-md transition hover:scale-105 cursor-pointer'>Remove Background</button>
                                 </>
                             )}
