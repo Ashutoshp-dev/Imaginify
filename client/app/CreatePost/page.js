@@ -113,23 +113,23 @@ const CreatePost = () => {
                         <h1 className='font-medium'>Orientation</h1>
                         <div className='flex space-x-2'>
                             <button className={`cursor-pointer border rounded w-10 h-10 flex items-center justify-center
-                                ${form.size === '1024x1792'
+                                ${form.size === '1024x1536'
                                     ? 'bg-purple-500 border-purple-400'
                                     : 'border-white/30 bg-white/10 hover:bg-white/20 text-white'}`} type='button'
                                 onClick={() => setForm({
                                     ...form,
-                                    size: form.size === "1024x1792" ? "1024x1024" : "1024x1792"
-                                })} title="Portrait (1024x1792)">
+                                    size: form.size === "1024x1536" ? "1024x1024" : "1024x1536"
+                                })} title="Portrait (1024x1536)">
                                 <svg viewBox="0 0 24 24" fillRule="none" xmlns="http://www.w3.org/2000/svg" className='w-10 h-10' ><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fillRule="evenodd" clipRule="evenodd" d="M6 4C6 3.44772 6.44772 3 7 3H17C17.5523 3 18 3.44772 18 4V18C18 18.5523 17.5523 19 17 19H7C6.44772 19 6 18.5523 6 18V4ZM7 1C5.34315 1 4 2.34315 4 4V20C4 21.6569 5.34315 23 7 23H17C18.6569 23 20 21.6569 20 20V4C20 2.34315 18.6569 1 17 1H7ZM12 22C12.5523 22 13 21.5523 13 21C13 20.4477 12.5523 20 12 20C11.4477 20 11 20.4477 11 21C11 21.5523 11.4477 22 12 22Z" fill="#000000"></path> </g></svg>
                             </button>
                             <button className={`cursor-pointer border rounded w-10 h-10 flex items-center justify-center
-                                ${form.size === '1792x1024'
+                                ${form.size === '1536x1024'
                                     ? 'bg-purple-500 border-purple-400'
                                     : 'border-white/30 bg-white/10 hover:bg-white/20 text-white'}`} type='button'
                                 onClick={() => setForm({
                                     ...form,
-                                    size: form.size === "1792x1024" ? "1024x1024" : "1792x1024"
-                                })} title="Landscape (1792x1024)">
+                                    size: form.size === "1536x1024" ? "1024x1024" : "1536x1024"
+                                })} title="Landscape (1536x1024)">
                                 <svg viewBox="0 0 24 24" fillRule="none" xmlns="http://www.w3.org/2000/svg" className='w-10 h-10' ><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fillRule="evenodd" clipRule="evenodd" d="M4 4C2.34315 4 1 5.34315 1 7V17C1 18.6569 2.34315 20 4 20H20C21.6569 20 23 18.6569 23 17V7C23 5.34315 21.6569 4 20 4H4ZM3 7C3 6.44772 3.44772 6 4 6H18C18.5523 6 19 6.44772 19 7V17C19 17.5523 18.5523 18 18 18H4C3.44772 18 3 17.5523 3 17V7ZM21 13C21.5523 13 22 12.5523 22 12C22 11.4477 21.5523 11 21 11C20.4477 11 20 11.4477 20 12C20 12.5523 20.4477 13 21 13Z" fill="#000000"></path> </g></svg>
                             </button>
                         </div>
