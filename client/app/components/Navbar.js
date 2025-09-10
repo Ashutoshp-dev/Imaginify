@@ -29,7 +29,7 @@ const Navbar = () => {
     <nav className='fixed top-10 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-6xl rounded-full flex px-6 py-3 justify-between items-center border border-white/20 backdrop-blur-2xl bg-white/30 shadow-lg'>
       <div className='font-bold text-xl'>
         <Link href="/">
-          <Image src="/logo.png" className='absolute w-40 -bottom-16 md:-bottom-18 left-5 ' alt="Imaginify Logo" width={160} height={64} style={{ width: 'auto', height: 'auto' }} />
+          <Image src="/logo.png" className='absolute w-40 -bottom-13 md:-bottom-15 left-5 ' alt="Imaginify Logo" width={160} height={64} />
         </Link>
       </div>
       
@@ -60,7 +60,7 @@ const Navbar = () => {
          <svg 
            viewBox="0 0 512 512" 
            xmlns="http://www.w3.org/2000/svg" 
-           className="w-10 h-10" 
+           className="w-10 h-10 z-50" 
            onClick={() => {handleMenuToggle()}}
          >
           <rect x="207.48" y="175.98" width="180.83" height="49.25" rx="24.62" ry="24.62" fill="none" stroke="#083b43" strokeWidth="20" strokeLinecap="round" strokeLinejoin="round" />
@@ -93,7 +93,7 @@ const Navbar = () => {
              </li>
              <li>
                <Link href="/CreatePost" className='flex items-center px-6 py-3 text-black font-bold hover:text-white transition-all duration-300 hover:bg-purple-500/80 group-hover:translate-x-2'>
-                 <span className='mr-3 text-2xl'>✨</span>
+                 <span className='mr-3 text-2xl'>🖋️</span>
                  <span className='text-lg'>Create</span>
                </Link>
              </li>

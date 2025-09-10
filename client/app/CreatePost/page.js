@@ -100,11 +100,11 @@ const CreatePost = () => {
 
     return (
         <div className='flex flex-col md:flex-row items-center justify-center gap-5 h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 p-5'>
-            <form className="flex flex-col justify-center bg-white/20 backdrop-blur-md mt-30 md:mt-20 text-white md:min-w-[50%] md:max-w-[80%] w-full p-6 text-left text-sm rounded-lg border border-white/20 shadow-xl ">
-                <label className="font-medium" htmlFor="email">Your Name</label>
-                <input id="name" name='name' value={form.name} onChange={handleChange} className="w-full border border-white/30 bg-white/10 placeholder-gray-300 text-white outline-none rounded py-2 px-3 focus:ring-2 focus:ring-purple-400 focus:border-transparent transition mb-4" type="text" placeholder="Enter Name" />
+            <form className="flex flex-col justify-center bg-white/20 backdrop-blur-md mt-30 md:mt-20 text-white md:min-w-[50%] md:max-w-[80%] max-h-[95%] w-full p-6 text-left text-sm rounded-lg border border-white/20 shadow-xl overflow-y-auto ">
+                <label className="font-medium mt-5" htmlFor="email">Your Name</label>
+                <input id="name" name='name' value={form.name} onChange={handleChange} className="w-full border border-white/30 bg-white/10 placeholder-gray-300 text-white outline-none rounded py-2 px-3 focus:ring-2 focus:ring-purple-400 focus:border-transparent transition mb-4" type="text" placeholder="Enter Name" required />
                 <label className="font-medium" htmlFor="content">Prompt</label>
-                <textarea rows="3" name='prompt' value={form.prompt} onChange={handleChange} id="content" className="w-full border border-white/30 bg-white/10 placeholder-gray-300 text-white outline-none rounded py-2 px-3 focus:ring-2 focus:ring-purple-400 focus:border-transparent transition" type="text" placeholder="Enter prompt" required></textarea>
+                <textarea rows="3" name='prompt' value={form.prompt} onChange={handleChange} id="content" className="w-full min-h-[3rem] border border-white/30 bg-white/10 placeholder-gray-300 text-white outline-none rounded py-2 px-3 focus:ring-2 focus:ring-purple-400 focus:border-transparent transition" type="text" placeholder="Enter prompt" required></textarea>
                 <div className='p-2'>
                     <button type='button' className='self-start px-3 rounded-full cursor-pointer bg-purple-500 hover:bg-purple-600/90 text-white font-medium transition' onClick={handleSurpriseMe}>Try Prompts</button>
                 </div>
@@ -137,13 +137,23 @@ const CreatePost = () => {
                             <span>Note: Orientation is optional and by default will be set to &quot;Square (1024x1024)&quot;</span>
                         </div>
                     </div>
-                    <div className='w-[10rem] h-[10rem] bg-gradient-to-br from-purple-200 to-pink-200 rounded-lg flex items-center justify-center mb-4 relative'>
+                    <div className='p-1 bg-black relative mb-4'>
                         {form.photo ? (
-                            <Image src={form.photo} alt="GeneratedImage" width={500} height={400} />
+                            <img
+                                src={form.photo}
+                                alt="GeneratedImage"
+                                className={
+                                    form.size === "1024x1536"
+                                        ? "object-contain max-h-[15rem] max-w-[10rem]"  // Portrait ratio
+                                        : form.size === "1536x1024"
+                                            ? "object-contain max-h-[10rem] max-w-[15rem]"  // Landscape ratio
+                                            : "object-contain max-h-[12rem] max-w-[12rem]"  // Square
+                                }
+                            />
                         ) : loading ? (
-                            <svg fill="hsl(228, 97%, 42%)" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className='absolute top-[50%] left-[50%] w-10 h-10 translate-x-[-50%] translate-y-[-50%]' ><rect x="1" y="6" width="2.8" height="12"><animate id="spinner_CcmT" begin="0;spinner_IzZB.end-0.1s" attributeName="y" calcMode="spline" dur="0.6s" values="6;1;6" keySplines=".36,.61,.3,.98;.36,.61,.3,.98" /><animate begin="0;spinner_IzZB.end-0.1s" attributeName="height" calcMode="spline" dur="0.6s" values="12;22;12" keySplines=".36,.61,.3,.98;.36,.61,.3,.98" /></rect><rect x="5.8" y="6" width="2.8" height="12"><animate begin="spinner_CcmT.begin+0.1s" attributeName="y" calcMode="spline" dur="0.6s" values="6;1;6" keySplines=".36,.61,.3,.98;.36,.61,.3,.98" /><animate begin="spinner_CcmT.begin+0.1s" attributeName="height" calcMode="spline" dur="0.6s" values="12;22;12" keySplines=".36,.61,.3,.98;.36,.61,.3,.98" /></rect><rect x="10.6" y="6" width="2.8" height="12"><animate begin="spinner_CcmT.begin+0.2s" attributeName="y" calcMode="spline" dur="0.6s" values="6;1;6" keySplines=".36,.61,.3,.98;.36,.61,.3,.98" /><animate begin="spinner_CcmT.begin+0.2s" attributeName="height" calcMode="spline" dur="0.6s" values="12;22;12" keySplines=".36,.61,.3,.98;.36,.61,.3,.98" /></rect><rect x="15.4" y="6" width="2.8" height="12"><animate begin="spinner_CcmT.begin+0.3s" attributeName="y" calcMode="spline" dur="0.6s" values="6;1;6" keySplines=".36,.61,.3,.98;.36,.61,.3,.98" /><animate begin="spinner_CcmT.begin+0.3s" attributeName="height" calcMode="spline" dur="0.6s" values="12;22;12" keySplines=".36,.61,.3,.98;.36,.61,.3,.98" /></rect><rect x="20.2" y="6" width="2.8" height="12"><animate id="spinner_IzZB" begin="spinner_CcmT.begin+0.4s" attributeName="y" calcMode="spline" dur="0.6s" values="6;1;6" keySplines=".36,.61,.3,.98;.36,.61,.3,.98" /><animate begin="spinner_CcmT.begin+0.4s" attributeName="height" calcMode="spline" dur="0.6s" values="12;22;12" keySplines=".36,.61,.3,.98;.36,.61,.3,.98" /></rect></svg>
+                            <video src="/generateLoader.mp4" className='w-[10rem] h-[10rem]' loop autoPlay muted ></video>
                         ) : (
-                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className='w-full h-full' ><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4.46814 17.5319C5.62291 19.7154 7.92876 20.5 12 20.5C17.6255 20.5 19.8804 19.002 20.3853 14.3853M4.46814 17.5319C3.77924 16.2292 3.5 14.4288 3.5 12C3.5 5.5 5.5 3.5 12 3.5C18.5 3.5 20.5 5.5 20.5 12C20.5 12.8745 20.4638 13.6676 20.3853 14.3853M4.46814 17.5319L7.58579 14.4142C8.36684 13.6332 9.63317 13.6332 10.4142 14.4142L10.5858 14.5858C11.3668 15.3668 12.6332 15.3668 13.4142 14.5858L15.5858 12.4142C16.3668 11.6332 17.6332 11.6332 18.4142 12.4142L20.3853 14.3853M10.691 8.846C10.691 9.865 9.864 10.692 8.845 10.692C7.827 10.692 7 9.865 7 8.846C7 7.827 7.827 7 8.845 7C9.864 7 10.691 7.827 10.691 8.846Z" stroke="#000000" strokeWidth="0.5" strokeLinecap="round" strokeLinejoin="round"></path> </g></svg>
+                            <Image src="/preview.jpg" alt="ImagePreview" width={150} height={150} />
                         )
                         }
 
